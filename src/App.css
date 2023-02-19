@@ -27,15 +27,15 @@ h1 {
   gap: 30px;
   margin: 20px 50px;
   display: flex;
-  /* display: grid; */
-  /* grid-template-columns: 1fr 1fr 1fr; */
-  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 400px;
-  width: 500px;
+  width: 400px;
   border: 1px solid black;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.52);
+  margin: auto;
 }
 
 .character-description {
@@ -51,9 +51,9 @@ h1 {
 .character-container p {
   text-align: center;
   margin-bottom: 10px;
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .image-character {
   width: 300px;
