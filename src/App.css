@@ -30,8 +30,8 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 400px;
-  width: 400px;
+  /* height: 400px;
+  width: 400px; */
   border: 1px solid black;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.52);
@@ -67,6 +67,11 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  /* height: 400px;
+  width: 400px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.52); */
 }
 .comics-container img {
   width: 300px;
@@ -107,4 +112,5 @@ form input {
 }
 form p {
   color: white;
+  text-decoration: none;
 }
