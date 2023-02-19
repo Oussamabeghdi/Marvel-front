@@ -1,43 +1,45 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-const Comics = () => {
+// import { Link } from "react-router-dom";
+// import Comicslist from "./Comicslist";
+
+const Comics = ({ search }) => {
   const [data, setData] = useState();
-  const [isloading, setIsloading] = useState(false);
+  const [isloading, setIsloading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/comics");
+        const response = await axios.get(
+          `http://localhost:4000/comics?title=${search}`
+        );
         console.log(response.data);
-        res.json(response.data);
+        // res.json(response.data);
         setData(response.data);
-        setIsloading(true);
+        setIsloading(false);
       } catch (error) {
-        res.status(400).json({ message: error.message });
+        console.log(error.message);
       }
     };
     fetchData();
-  }, []);
+  }, [search]);
 
   return isloading ? (
     <p>Loading....</p>
   ) : (
-    <div>
+    <div className="comics-container">
       {data.results.map((item) => {
         return (
-          <article
-            style={{ height: 200, width: 300, border: "1px solid red" }}
-            key={item._id}
-          >
-            <p>{item.title}</p>
+          // <Comicslist key={item._id} comicslist={item} />
+
+          <article key={item._id}>
+            <p className="comics-title ">{item.title}</p>
+            {/* <p className="comics-description ">{item.description}</p> */}
             <img
-              src={
-                item.results.thumbnail.path +
-                " " +
-                item.results.thumbnail.extension
-              }
+              // className="image-character"
+              src={item.thumbnail.path + "." + item.thumbnail.extension}
+              alt="comics"
             />
-            {item.description}
           </article>
         );
       })}
