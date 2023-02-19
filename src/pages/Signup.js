@@ -4,6 +4,8 @@ import axios from "axios";
 
 const Signup = ({ handleToken }) => {
   const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
+
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -16,8 +18,10 @@ const Signup = ({ handleToken }) => {
     setErrorMessage("");
     try {
       const response = await axios.post("https://localhost:4000/signup", {
+        username: username,
         email: email,
         password: password,
+
         confirmPassword: password,
       });
       if (response.data.token) {
@@ -25,8 +29,6 @@ const Signup = ({ handleToken }) => {
         navigate("/");
       }
     } catch (error) {
-      // console.log(error.response.data);
-      // console.log(error.response.status);
       if (error.response.data.message === "This email already has an account") {
         setErrorMessage(
           "Cet email est déjà utilisé, veuillez créer un compte avec un mail valide."
@@ -45,7 +47,14 @@ const Signup = ({ handleToken }) => {
         onSubmit={handleSignup}
       >
         <h1>S'inscrire</h1>
-
+        <input
+          value={username}
+          type="text"
+          placeholder="Nom d'utilisateur"
+          onChange={(event) => {
+            setUsername(event.target.value);
+          }}
+        />
         <input
           value={email}
           type="mail"
