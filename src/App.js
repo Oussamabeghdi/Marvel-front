@@ -35,6 +35,7 @@ function App() {
       <Header
         token={token}
         search={search}
+        handleToken={handleToken}
         setToken={setToken}
         setSearch={setSearch}
       />

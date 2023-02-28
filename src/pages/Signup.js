@@ -5,7 +5,6 @@ import axios from "axios";
 const Signup = ({ handleToken }) => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
-
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -21,9 +20,9 @@ const Signup = ({ handleToken }) => {
         username: username,
         email: email,
         password: password,
-        confirmPassword: password,
+        confirmPassword: confirmPassword,
       });
-      console.log(response.data);
+      // console.log(response.data);
       if (response.data.token) {
         handleToken(response.data.token);
         navigate("/");
@@ -60,7 +59,7 @@ const Signup = ({ handleToken }) => {
 
         <label htmlFor="Email">Email</label>
         <input
-        id="Email"
+          id="Email"
           value={email}
           type="mail"
           placeholder="Email"
@@ -84,7 +83,7 @@ const Signup = ({ handleToken }) => {
           Confirmer votre mot de passe
         </label>
         <input
-        id="Confirmer votre mot de passe"
+          id="Confirmer votre mot de passe"
           value={confirmPassword}
           type="password"
           placeholder="Confirmer votre mot de passe"

@@ -16,13 +16,12 @@ const Login = ({ handleToken }) => {
         email: email,
         password: password,
       });
-      console.log(response.data);
+      // console.log(response.data);
       if (response.data.token) {
         handleToken(response.data.token);
         navigate("/");
       }
     } catch (error) {
-     
       console.log(error.response.data);
     }
   };
