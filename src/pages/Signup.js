@@ -21,9 +21,9 @@ const Signup = ({ handleToken }) => {
         username: username,
         email: email,
         password: password,
-
         confirmPassword: password,
       });
+      console.log(response.data);
       if (response.data.token) {
         handleToken(response.data.token);
         navigate("/");
@@ -43,11 +43,13 @@ const Signup = ({ handleToken }) => {
   return (
     <div className="form-container">
       <form
-        style={{ display: "flex", flexDirection: "column", gap: "30px" }}
+        style={{ display: "flex", flexDirection: "column", gap: "20px" }}
         onSubmit={handleSignup}
       >
         <h1>S'inscrire</h1>
+        <label htmlFor="Nom d'utilisateur">Nom d'utilisateur</label>
         <input
+          id="Nom d'utilisateur"
           value={username}
           type="text"
           placeholder="Nom d'utilisateur"
@@ -55,7 +57,10 @@ const Signup = ({ handleToken }) => {
             setUsername(event.target.value);
           }}
         />
+
+        <label htmlFor="Email">Email</label>
         <input
+        id="Email"
           value={email}
           type="mail"
           placeholder="Email"
@@ -63,7 +68,10 @@ const Signup = ({ handleToken }) => {
             setEmail(event.target.value);
           }}
         />
+
+        <label htmlFor="Mot de passe">Mot de passe</label>
         <input
+          id="Mot de passe"
           value={password}
           type="password"
           placeholder="Mot de passe"
@@ -71,7 +79,12 @@ const Signup = ({ handleToken }) => {
             setPassword(event.target.value);
           }}
         />
+
+        <label htmlFor="Confirmer votre mot de passe">
+          Confirmer votre mot de passe
+        </label>
         <input
+        id="Confirmer votre mot de passe"
           value={confirmPassword}
           type="password"
           placeholder="Confirmer votre mot de passe"

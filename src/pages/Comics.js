@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 // import Comicslist from "./Comicslist";
 
 const Comics = ({ search }) => {
@@ -14,11 +14,10 @@ const Comics = ({ search }) => {
           `http://localhost:4000/comics?title=${search}`
         );
         console.log(response.data);
-        // res.json(response.data);
         setData(response.data);
         setIsloading(false);
       } catch (error) {
-        console.log(error.message);
+        console.log({ message: error.message });
       }
     };
     fetchData();
@@ -28,19 +27,20 @@ const Comics = ({ search }) => {
     <p>Loading....</p>
   ) : (
     <div className="comics-container">
-      {data.results.map((item) => {
+      {data.results.map((item, index) => {
         return (
           // <Comicslist key={item._id} comicslist={item} />
-
-          <article key={item._id}>
-            <p className="comics-title ">{item.title}</p>
-            {/* <p className="comics-description ">{item.description}</p> */}
-            <img
-              // className="image-character"
-              src={item.thumbnail.path + "." + item.thumbnail.extension}
-              alt="comics"
-            />
-          </article>
+          <Link key={index} to={`/comics/${item._id}`}>
+            <article>
+              <p className="comics-title ">{item.title}</p>
+              <p className="comics-description ">{item.description}</p>
+              <img
+                // className="image-character"
+                src={item.thumbnail.path + "." + item.thumbnail.extension}
+                alt="comics"
+              />
+            </article>
+          </Link>
         );
       })}
     </div>

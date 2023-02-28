@@ -6,11 +6,10 @@ const Header = ({ search, setSearch }) => {
   return (
     <section
       className="header-container"
-      style={{
-        width: "100%",
-        height: "500px",
-      }}
+     
     >
+     <div className="header-block">
+
       <Searchbar search={search} setSearch={setSearch} />
       <div className="custom-buttons">
         <Link to="/signup">
@@ -20,13 +19,12 @@ const Header = ({ search, setSearch }) => {
           <button>Se connecter</button>
         </Link>
       </div>
+     </div>
 
       <img
         style={{
           width: "100%",
           height: "300px",
-          //   marginTop: 10,
-
           objectFit: "contain",
         }}
         src={logo}

@@ -3,18 +3,18 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 // import { Link } from "react-router-dom";
 
-const Comicslist = ({ comicslist }) => {
+const Comicslist = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
   const params = useParams();
-  const id = params.id;
-  console.log(params);
+  const id = params.characterId;
+  // console.log(params.characterId);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost4000/comics/${id}`);
+        const response = await axios.get("http://localhost:4000/comics/" + id);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -27,16 +27,20 @@ const Comicslist = ({ comicslist }) => {
   return isLoading ? (
     <p>Loading...</p>
   ) : (
-    // <Link to={`/comics/${comicslist._id}`}>
     <div>
-      <p>{data.comicslist.title} </p>
-      <p>{data.comicslist.description} </p>
-      {/* <img src={item} alt="" /> */}
-      {/* {data.results.comics.map((comics) => {
-          return <Comicslist key={comics._id} comicslist={comics} />;
-        })} */}
+      {data.results.map((elem, index) => {
+        return (
+          <section>
+            <img
+              src={elem.thumbnail.path + "." + elem.thumbnail.extension}
+              alt="comics"
+            />
+            <p>{elem.title} </p>
+            <p>{elem.description} </p>
+          </section>
+        );
+      })}
     </div>
-    // </Link>
   );
 };
 

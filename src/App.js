@@ -22,7 +22,7 @@ function App() {
     if (token) {
       setToken(token);
 
-      Cookies.set("token-user", token, { expires: 14 });
+      Cookies.set("token-user", token, { expires: 28 });
     } else {
       setToken(null);
 
@@ -49,7 +49,7 @@ function App() {
           path="/character/:characterId"
           element={<Infoscharacter search={search} />}
         />
-        <Route path="/comics/:characterId" elemnet={<Comicslist />} />
+        <Route path="/comics/:characterId" element={<Comicslist />} />
         <Route path="/comics" element={<Comics search={search} />} />
       </Routes>
     </Router>

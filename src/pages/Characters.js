@@ -13,7 +13,7 @@ const Characters = ({ search }) => {
         const response = await axios.get(
           `http://localhost:4000/characters?name=${search}`
         );
-        // response.json(response.data);
+
         console.log(response.data);
         setData(response.data);
         setIsLoading(false);
@@ -25,13 +25,19 @@ const Characters = ({ search }) => {
     fetchData();
   }, [search]);
   return isLoading ? (
-    <p>Chargement...</p>
+    <p>Loading...</p>
   ) : (
-    <div>
+   
+    <div className="container">
       {data.results.map((item) => {
-        return <Details key={item._id} item={item} />;
+        return <Details 
+ 
+       
+          
+         key={item._id} item={item} />;
       })}
     </div>
+   
   );
 };
 
