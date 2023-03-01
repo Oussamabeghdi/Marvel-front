@@ -15,7 +15,7 @@ const Comicslist = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://lereacteur-marvel-api.herokuapp.com/comics/" + id
+          "site--marvel-backend--9gtnl5qyn2yw.code.run/comics/" + id
         );
         setData(response.data);
         setIsLoading(false);
