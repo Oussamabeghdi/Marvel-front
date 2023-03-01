@@ -29,7 +29,7 @@ const Characters = ({ search }) => {
     <p>Loading...</p>
   ) : (
     <div className="container">
-      {data?.results.map((item) => {
+      {data.map((item) => {
         return <Details key={item._id} item={item} />;
       })}
     </div>
