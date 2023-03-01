@@ -11,7 +11,7 @@ const Comics = ({ search }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/comics?title=${search}`
+          `https://lereacteur-marvel-api.herokuapp.com/comics?title=${search}`
         );
         console.log(response.data);
         setData(response.data);

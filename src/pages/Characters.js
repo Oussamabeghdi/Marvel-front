@@ -11,7 +11,7 @@ const Characters = ({ search }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/characters?name=${search}`
+          `https://lereacteur-marvel-api.herokuapp.com/characters?name=${search}`
         );
 
         console.log(response.data);
@@ -24,20 +24,15 @@ const Characters = ({ search }) => {
 
     fetchData();
   }, [search]);
+
   return isLoading ? (
     <p>Loading...</p>
   ) : (
-   
     <div className="container">
       {data.results.map((item) => {
-        return <Details 
- 
-       
-          
-         key={item._id} item={item} />;
+        return <Details key={item._id} item={item} />;
       })}
     </div>
-   
   );
 };
 

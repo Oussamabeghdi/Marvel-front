@@ -14,7 +14,9 @@ const Comicslist = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/comics/" + id);
+        const response = await axios.get(
+          "https://lereacteur-marvel-api.herokuapp.com/comics/" + id
+        );
         setData(response.data);
         setIsLoading(false);
       } catch (error) {

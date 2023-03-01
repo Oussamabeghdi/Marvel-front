@@ -12,8 +12,13 @@ import Login from "./pages/Login";
 
 //components
 import Header from "./components/Header";
+// import Pagination from "./components/Pagination";
 
 function App() {
+  // const [data, setData] = useState();
+
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const [charactersPerPage] = useState(50);
   const [token, setToken] = useState(Cookies.get("token-user") || null);
 
   const [search, setSearch] = useState("");
@@ -30,6 +35,12 @@ function App() {
     }
   };
 
+  // const indexOfLastData = currentPage * charactersPerPage;
+  // const indexOfFirstData = indexOfLastData - charactersPerPage;
+  // const currentCharacters = data.slice(indexOfFirstData, indexOfLastData);
+
+  // const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   return (
     <Router>
       <Header
@@ -44,6 +55,7 @@ function App() {
           path="/"
           element={<Characters search={search} setSearch={setSearch} />}
         />
+
         <Route path="/signup" element={<Signup handleToken={handleToken} />} />
         <Route path="/login" element={<Login handleToken={handleToken} />} />
         <Route
