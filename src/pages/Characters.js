@@ -11,7 +11,7 @@ const Characters = ({ search }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://lereacteur-marvel-api.herokuapp.com/characters?name=${search}`
+          `site--marvel-backend--9gtnl5qyn2yw.code.run/characters?name=${search}`
         );
 
         console.log(response.data);
