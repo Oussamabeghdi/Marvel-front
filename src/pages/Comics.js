@@ -27,7 +27,7 @@ const Comics = ({ search }) => {
     <p>Loading....</p>
   ) : (
     <div className="comics-container">
-      {data.results.map((item, index) => {
+      {results.map((item, index) => {
         return (
           // <Comicslist key={item._id} comicslist={item} />
           <Link key={index} to={`/comics/${item._id}`}>
