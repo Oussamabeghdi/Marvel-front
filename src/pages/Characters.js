@@ -4,7 +4,7 @@ import Details from "../components/Details";
 // import { Link } from "react-router-dom";
 
 const Characters = ({ search }) => {
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const Characters = ({ search }) => {
     <p>Loading...</p>
   ) : (
     <div className="container">
-      {data.map((item) => {
+      {data.results.map((item) => {
         return <Details key={item._id} item={item} />;
       })}
     </div>

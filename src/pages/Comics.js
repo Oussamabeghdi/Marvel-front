@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 // import Comicslist from "./Comicslist";
 
 const Comics = ({ search }) => {
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
   const [isloading, setIsloading] = useState(true);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const Comics = ({ search }) => {
     <p>Loading....</p>
   ) : (
     <div className="comics-container">
-      {data.map((item, index) => {
+      {data.results.map((item, index) => {
         return (
           // <Comicslist key={item._id} comicslist={item} />
           <Link key={index} to={`/comics/${item._id}`}>
