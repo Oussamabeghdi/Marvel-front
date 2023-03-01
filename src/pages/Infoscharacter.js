@@ -14,7 +14,7 @@ const Infoscharacter = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/character/" + id
+          "site--marvel-backend--9gtnl5qyn2yw.code.run/" + id
         );
         console.log(response.data);
         setData(response.data);
@@ -36,16 +36,14 @@ const Infoscharacter = () => {
         }
         alt=""
       /> */}
-        {/* <h2>{item.name}</h2> */}
-        {data.comics.map((tab, index) => {
+      {/* <h2>{item.name}</h2> */}
+      {data.comics.map((tab, index) => {
         return (
-         
           <ol key={index}>
             <li>id : {tab}</li>
           </ol>
         );
       })}
-    
     </div>
   );
 };
