@@ -17,15 +17,18 @@ h1 {
 }
 
 /* ---------Header------------ */
-.header-container {
+header {
   height: 450px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
 }
 .header-block {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-section button {
+header button {
   display: flex;
   margin-left: 20px;
   align-items: center;

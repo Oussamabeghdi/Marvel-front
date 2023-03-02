@@ -2,13 +2,13 @@ import Searchbar from "./Searchbar";
 import logo from "../img/logo.png";
 import { Link } from "react-router-dom";
 
-const Header = ({ handelToken, token, search, setSearch }) => {
+const Header = ({ handleToken, token, search, setSearch }) => {
   return (
-    <section className="header-container">
+    <header>
       {token ? (
         <button
           onClick={() => {
-            handelToken(null);
+            handleToken(null);
           }}
         >
           Se déconnecter
@@ -39,7 +39,7 @@ const Header = ({ handelToken, token, search, setSearch }) => {
         src={logo}
         alt=""
       />
-    </section>
+    </header>
   );
 };
 
