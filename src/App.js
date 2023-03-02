@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Cookies from "js-cookie";
 
-import Characters1 from "./pages/Characters";
+import Characters from "./pages/Characters";
 import Infoscharacter from "./pages/Infoscharacter";
 import Comics from "./pages/Comics";
 import Comicslist from "./pages/Comicslist";
@@ -55,10 +55,7 @@ function App() {
           path="/"
           element={<Characters search={search} setSearch={setSearch} />}
         /> */}
-        <Route
-          path="/"
-          element={<Characters1 search={search} setSearch={setSearch} />}
-        />
+        <Route path="/" element={<Characters search={search} />} />
 
         <Route path="/signup" element={<Signup handleToken={handleToken} />} />
         <Route path="/login" element={<Login handleToken={handleToken} />} />
