@@ -4,22 +4,21 @@ import { Link } from "react-router-dom";
 
 const Header = ({ search, setSearch }) => {
   return (
-    <section
-      className="header-container"
-     
-    >
-     <div className="header-block">
+    <section className="header-container">
+      <div className="header-block">
+        <Searchbar search={search} setSearch={setSearch} />
 
-      <Searchbar search={search} setSearch={setSearch} />
-      <div className="custom-buttons">
         <Link to="/signup">
-          <button>S'inscrire</button>
+          <button>
+            <p>S'inscrire</p>
+          </button>
         </Link>
         <Link to="/login">
-          <button>Se connecter</button>
+          <button>
+            <p>Se connecter</p>
+          </button>
         </Link>
       </div>
-     </div>
 
       <img
         style={{

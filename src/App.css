@@ -6,7 +6,6 @@
 body {
   background-color: #7b1f1fe8;
   font-family: "DM Sans", sans-serif;
-  
 }
 a {
   text-decoration: none;
@@ -18,77 +17,83 @@ h1 {
 }
 
 /* ---------Header------------ */
-.header-container{
+.header-container {
   height: 450px;
 }
-.header-block{
-  display:flex;
-  justify-content:center;
-  align-items:center;
+.header-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+section button {
+  display: flex;
+  margin-left: 20px;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.52);
+  color: white;
+}
+
 .searchbar input {
   width: 400px;
   height: 40px;
   font-size: 20px;
   display: flex;
-  border-radius:5px;
+  border-radius: 5px;
   padding: 10px;
   margin: 40px auto;
   border: none;
 }
-.custom-buttons {
-  display: flex;
-  margin-left: 50px;
-  align-items: center;
-  justify-content:center;
-}
 
 /* ---------Main---------- */
-.details-container{
+.details-container {
   border: 1px solid black;
   border-radius: 10px;
-  border:2px solid black;
+  border: 2px solid black;
   background-color: rgba(0, 0, 0, 0.52);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.container  {
-display:grid;
-grid-template-columns:1fr 1fr 1fr 1fr 1fr ;
-grid-gap:20px;
-height: 300px;
-width: 300px;
-margin-bottom:10px;
-margin-left: 140px;
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  height: 300px;
+  width: 300px;
+  margin-bottom: 10px;
+  margin-left: 140px;
 }
 
 .character-description {
-font-size: 12px;
-color: #ffffff;
-font-weight: bold;
-/* border:1px solid black; */
-width:300px;
-height:100px;
-text-align:center;
-padding-top:15px
+  font-size: 12px;
+  color: #ffffff;
+  font-weight: bold;
+  /* border:1px solid black; */
+  width: 300px;
+  height: 100px;
+  text-align: center;
+  padding-top: 15px;
 }
 .character-name {
   font-size: 18px;
   color: #ffffff;
   font-weight: bold;
-  text-align:center;
-  padding-top:10px;
+  text-align: center;
+  padding-top: 10px;
 }
 
 .image-character {
-  margin-bottom:20px;
+  margin-bottom: 20px;
   object-fit: fill;
-  border:1px solid white;
-  width:160px;
-  height:160px;
+  border: 1px solid white;
+  width: 160px;
+  height: 160px;
 }
 .infos-container {
   color: white;
@@ -97,18 +102,17 @@ padding-top:15px
   justify-content: center;
   align-items: center;
 }
-.infos-container li{
+.infos-container li {
   margin: 40px;
-  display:flex;
-  height:50px;
-  width:300px;
+  display: flex;
+  height: 50px;
+  width: 300px;
   border: 2px solid white;
   background-color: black;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   /* margin-bottom:10px; */
-  border-radius:5px;
-
+  border-radius: 5px;
 }
 .comics-container {
   gap: 30px;
@@ -117,7 +121,7 @@ padding-top:15px
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  text-align:center;
+  text-align: center;
   /* height: 400px;
   width: 400px;
   border: 1px solid black;
@@ -147,17 +151,24 @@ padding-top:15px
 
 /* ---------Form----------- */
 
-.form-container {
+form {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  gap: 15px;
 }
 form input {
   height: 40px;
   border-radius: 5px;
+  width: 250px;
+  margin-top: 20px;
 }
 form p {
   color: white;
   text-decoration: none;
+}
+.signup-btn {
+  margin-top: 15px;
 }

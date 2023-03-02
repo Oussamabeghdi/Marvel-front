@@ -30,11 +30,8 @@ const Login = ({ handleToken }) => {
   };
 
   return (
-    <div className="form-container">
-      <form
-        style={{ display: "flex", flexDirection: "column", gap: "30px" }}
-        onSubmit={handleLogin}
-      >
+    <div>
+      <form onSubmit={handleLogin}>
         <h1>Se connecter</h1>
         <input
           value={email}

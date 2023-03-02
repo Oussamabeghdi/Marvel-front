@@ -44,12 +44,9 @@ const Signup = ({ handleToken }) => {
 
   return (
     <div className="form-container">
-      <form
-        style={{ display: "flex", flexDirection: "column", gap: "20px" }}
-        onSubmit={handleSignup}
-      >
+      <form onSubmit={handleSignup}>
         <h1>S'inscrire</h1>
-        <label htmlFor="Nom d'utilisateur">Nom d'utilisateur</label>
+
         <input
           id="Nom d'utilisateur"
           value={username}
@@ -60,7 +57,6 @@ const Signup = ({ handleToken }) => {
           }}
         />
 
-        <label htmlFor="Email">Email</label>
         <input
           id="Email"
           value={email}
@@ -71,7 +67,6 @@ const Signup = ({ handleToken }) => {
           }}
         />
 
-        <label htmlFor="Mot de passe">Mot de passe</label>
         <input
           id="Mot de passe"
           value={password}
@@ -82,9 +77,6 @@ const Signup = ({ handleToken }) => {
           }}
         />
 
-        <label htmlFor="Confirmer votre mot de passe">
-          Confirmer votre mot de passe
-        </label>
         <input
           id="Confirmer votre mot de passe"
           value={confirmPassword}
@@ -95,7 +87,7 @@ const Signup = ({ handleToken }) => {
           }}
         />
 
-        <input type="submit" value="S'inscrire" />
+        <input className="signup-btn" type="submit" value="S'inscrire" />
         {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
         <Link to="/login">
           <p>Tu as déjà un compte, connecte-toi !</p>
