@@ -19,7 +19,7 @@ function App() {
 
   // const [currentPage, setCurrentPage] = useState(1);
   // const [charactersPerPage] = useState(50);
-  const [token, setToken] = useState(Cookies.get("token-user") || null);
+  const [token, setToken] = useState(Cookies.get("token-user" || null));
 
   const [search, setSearch] = useState("");
 
