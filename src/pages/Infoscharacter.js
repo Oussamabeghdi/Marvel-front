@@ -14,9 +14,9 @@ const Infoscharacter = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://site--marvel-backend--9gtnl5qyn2yw.code.run/" + id
+          "https://site--marvel-backend--9gtnl5qyn2yw.code.run/character" + id
         );
-        console.log(response.data);
+        // console.log(response.data);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
