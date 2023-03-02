@@ -11,7 +11,8 @@ const Characters = ({ search }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `site--marvel-backend--9gtnl5qyn2yw.code.run/characters?name=${search}`
+          `https://site--marvel-backend--9gtnl5qyn2yw.code.run/characters?name=${search}`
+          //   `http://localhost:4000/characters?name=${serach}`
         );
 
         console.log(response.data);

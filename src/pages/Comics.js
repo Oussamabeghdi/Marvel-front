@@ -11,7 +11,7 @@ const Comics = ({ search }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `site--marvel-backend--9gtnl5qyn2yw.code.run/comics?title=${search}`
+          `https://site--marvel-backend--9gtnl5qyn2yw.code.run/comics?title=${search}`
         );
         console.log(response.data);
         setData(response.data);
@@ -29,13 +29,11 @@ const Comics = ({ search }) => {
     <div className="comics-container">
       {data.results.map((item, index) => {
         return (
-          // <Comicslist key={item._id} comicslist={item} />
           <Link key={index} to={`/comics/${item._id}`}>
             <article>
               <p className="comics-title ">{item.title}</p>
               <p className="comics-description ">{item.description}</p>
               <img
-                // className="image-character"
                 src={item.thumbnail.path + "." + item.thumbnail.extension}
                 alt="comics"
               />

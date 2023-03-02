@@ -51,10 +51,6 @@ function App() {
         setSearch={setSearch}
       />
       <Routes>
-        {/* <Route
-          path="/"
-          element={<Characters search={search} setSearch={setSearch} />}
-        /> */}
         <Route path="/" element={<Characters search={search} />} />
 
         <Route path="/signup" element={<Signup handleToken={handleToken} />} />
