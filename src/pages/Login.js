@@ -14,18 +14,19 @@ const Login = ({ handleToken }) => {
     try {
       const response = await axios.post(
         "https://site--marvel-backend--9gtnl5qyn2yw.code.run/login",
+        // "http://localhost:4000/login",
         {
           email: email,
           password: password,
         }
       );
-      // console.log(response.data);
+      console.log(response.data);
       if (response.data.token) {
         handleToken(response.data.token);
         navigate("/");
       }
     } catch (error) {
-      console.log(error.response.data);
+      console.log({ message: error.response.data });
     }
   };
 
