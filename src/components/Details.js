@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
-
+import CharacterCard from "./CharaterCard";
 const Details = ({ item }) => {
   return (
-    <Link to={`/character/${item._id}`}  >
-     
-     <section className="main-container" >
+    <section className="main-container">
+      <Link to={`/character/${item._id}`}>
         <div className="details-container">
           <p className="character-name">{item.name}</p>
           <p className="character-description">{item.description} </p>
@@ -14,8 +13,10 @@ const Details = ({ item }) => {
             alt="heros"
           />
         </div>
-        </section>
-    </Link>
+      </Link>
+
+      <CharacterCard name={item.name} />
+    </section>
   );
 };
 

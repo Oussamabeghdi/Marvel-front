@@ -9,18 +9,20 @@ const Comicslist = () => {
 
   const params = useParams();
   const id = params.characterId;
-  // console.log(params.characterId);
+  console.log(params.characterId);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://site--marvel-backend--9gtnl5qyn2yw.code.run/comics/" + id
+          // "https://site--marvel-backend--9gtnl5qyn2yw.code.run/comics/" + id
+          "http://localhost:4000/comics/" + id
         );
         setData(response.data);
+        console.log(response.data);
         setIsLoading(false);
       } catch (error) {
-        console.log({ message: error.message });
+        console.log({ message1: error.message });
       }
     };
     fetchData();
@@ -29,20 +31,21 @@ const Comicslist = () => {
   return isLoading ? (
     <p>Loading...</p>
   ) : (
-    <div>
+    <section>
       {data.results.map((elem, index) => {
+        console.log(elem);
         return (
-          <section>
+          <div key={index}>
             <img
               src={elem.thumbnail.path + "." + elem.thumbnail.extension}
               alt="comics"
             />
             <p>{elem.title} </p>
             <p>{elem.description} </p>
-          </section>
+          </div>
         );
       })}
-    </div>
+    </section>
   );
 };
 

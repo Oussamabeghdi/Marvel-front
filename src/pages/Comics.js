@@ -28,17 +28,21 @@ const Comics = ({ search }) => {
   ) : (
     <div className="comics-container">
       {data.results.map((item, index) => {
+        // console.log(item);
         return (
-          <Link key={index} to={`/comics/${item._id}`}>
-            <article>
-              <p className="comics-title ">{item.title}</p>
-              <p className="comics-description ">{item.description}</p>
+          <article key={index} className="comics">
+            <Link to={`/comics/${item._id}`}>
+              <div>
+                <p className="comics-title ">{item.title}</p>
+                <p className="comics-description ">{item.description}</p>
+              </div>
+
               <img
                 src={item.thumbnail.path + "." + item.thumbnail.extension}
                 alt="comics"
               />
-            </article>
-          </Link>
+            </Link>
+          </article>
         );
       })}
     </div>
