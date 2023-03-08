@@ -13,9 +13,9 @@ const CharacterCard = ({ name }) => {
     const favoriteCharaters = Cookies.get("favoritesCharacters") || [];
     if (isFavorite) {
       const index = favoriteCharaters.indexOf(name);
-      if (index > -1) {
-        favoriteCharaters.splice(index, 1);
-      }
+      // if (index > -1) {
+      //   favoriteCharaters.splice(index, 1);
+      // }
     } else {
       favoriteCharaters.push(name);
     }

@@ -15,6 +15,7 @@ const Menu = () => {
       </li>
       <li>
         <Link>
+          <div>{}</div>
           <button style={{ width: "80px" }}>Favories</button>
         </Link>
       </li>
