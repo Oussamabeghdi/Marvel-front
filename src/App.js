@@ -13,13 +13,13 @@ import Login from "./pages/Login";
 //components
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Pagination from "./components/Pagination";
+// import Pagination from "./components/Pagination";
 
 function App() {
   // const [data, setData] = useState();
-  const totalCharacters = 200;
-  const [setCurrentPage] = useState(1);
-  const [charactersPerPage] = useState(100);
+  // const totalCharacters = 200;
+  // const [setCurrentPage] = useState(1);
+  // const [charactersPerPage] = useState(100);
   const [token, setToken] = useState(Cookies.get("token-user" || null));
 
   const [search, setSearch] = useState("");
@@ -35,12 +35,6 @@ function App() {
       Cookies.remove("token-user");
     }
   };
-
-  // const indexOfLastData = currentPage * charactersPerPage;
-  // const indexOfFirstData = indexOfLastData - charactersPerPage;
-  // const currentCharacters = data.slice(indexOfFirstData, indexOfLastData);
-
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <Router>
@@ -64,11 +58,7 @@ function App() {
         <Route path="/comics/:characterId" element={<Comicslist />} />
         <Route path="/comics" element={<Comics search={search} />} />
       </Routes>
-      <Pagination
-        charactersPerPage={charactersPerPage}
-        totalCharacters={totalCharacters}
-        paginate={paginate}
-      />
+
       <Footer />
     </Router>
   );
