@@ -20,8 +20,8 @@ const Characters = ({
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          // `https://site--marvel-backend--9gtnl5qyn2yw.code.run/characters?name=${search}`
-          `http://localhost:4000/characters?name=${searchResults}`
+          `https://site--marvel-backend--9gtnl5qyn2yw.code.run/characters?name=${searchResults}`
+          // `http://localhost:4000/characters?name=${searchResults}`
         );
 
         console.log(response.data);
