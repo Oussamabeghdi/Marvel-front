@@ -9,11 +9,8 @@ const Paginate = ({
   currentPage,
   onChangeCurrentPage,
 }) => {
-  //   const [currentPage, setCurrentPage] = useState(0);
-
   const onPageChange = ({ selected }) => {
     onChangeCurrentPage(selected);
-    // console.log(onPageChange);
   };
 
   const pageCount = useMemo(
@@ -31,7 +28,7 @@ const Paginate = ({
     [startDisplay, itemsPerPage]
   );
 
-  const currentPageData = useMemo(() => {
+  useMemo(() => {
     const pageData = data.slice(startDisplay, endDisplay);
     onChangeCurrentPageData(pageData);
     return pageData;

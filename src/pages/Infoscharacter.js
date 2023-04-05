@@ -9,7 +9,6 @@ const Infoscharacter = () => {
 
   const params = useParams();
   const id = params.characterId;
-  // console.log(id);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,7 +18,6 @@ const Infoscharacter = () => {
 
           // "http://localhost:4000/character/ " + id
         );
-        // console.log(response.data);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {

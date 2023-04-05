@@ -17,8 +17,8 @@ const Signup = ({ handleToken }) => {
     setErrorMessage("");
     try {
       const response = await axios.post(
-        // "https://site--marvel-backend--9gtnl5qyn2yw.code.run/signup",
-        "http://localhost:4000/Signup",
+        "https://site--marvel-backend--9gtnl5qyn2yw.code.run/signup",
+        // "http://localhost:4000/Signup",
         {
           username: username,
           email: email,
