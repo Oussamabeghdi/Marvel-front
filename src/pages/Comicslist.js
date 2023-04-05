@@ -33,7 +33,7 @@ const Comicslist = () => {
   ) : (
     <section>
       {data.results.map((elem, index) => {
-        console.log(elem);
+        // console.log(elem);
         return (
           <div key={index}>
             <img

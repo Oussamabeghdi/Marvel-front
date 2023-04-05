@@ -1,28 +1,36 @@
+import { Link, useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Searchbar from "./Searchbar";
 import Menu from "./Menu";
-import logo from "../img/logo.png";
-import { Link } from "react-router-dom";
 
-const Header = ({ handleToken, token, search, setSearch }) => {
+// import logo from "../img/logo.png";
+
+import fond from "../img/fond-decran-marvel.jpg";
+
+const Header = ({ handleToken, token, searchResults, setSearchResults }) => {
+  const navigate = useNavigate();
+
   return (
     <header>
       <section>
         <Menu />
+        <FontAwesomeIcon icon="bars" />
         <Searchbar
           // className="input-search"
-          search={search}
-          setSearch={setSearch}
+          searchResults={searchResults}
+          setSearchResults={setSearchResults}
         />
         {token ? (
           <button
             onClick={() => {
               handleToken(null);
+              navigate("/");
             }}
           >
             Se déconnecter
           </button>
         ) : (
-          <div>
+          <div className="menu-container">
             {/* <Searchbar search={search} setSearch={setSearch} /> */}
 
             <Link to="/signup">
@@ -38,16 +46,9 @@ const Header = ({ handleToken, token, search, setSearch }) => {
           </div>
         )}
       </section>
-      <img
-        style={{
-          marginTop: "10px",
-          width: "100%",
-          height: "200px",
-          objectFit: "contain",
-        }}
-        src={logo}
-        alt=""
-      />
+      <div className="header-logo">
+        <img src={fond} alt="" />
+      </div>
     </header>
   );
 };

@@ -17,7 +17,8 @@ const Signup = ({ handleToken }) => {
     setErrorMessage("");
     try {
       const response = await axios.post(
-        "https://site--marvel-backend--9gtnl5qyn2yw.code.run/signup",
+        // "https://site--marvel-backend--9gtnl5qyn2yw.code.run/signup",
+        "http://localhost:4000/Signup",
         {
           username: username,
           email: email,
@@ -28,7 +29,7 @@ const Signup = ({ handleToken }) => {
       console.log(response.data);
       if (response.data.token) {
         handleToken(response.data.token);
-        navigate("/");
+        navigate("/characters");
       }
     } catch (error) {
       if (error.response.data.message === "This email already has an account") {

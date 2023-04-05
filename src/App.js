@@ -1,8 +1,9 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Cookies from "js-cookie";
 
+// import Home from "./pages/Home";
 import Characters from "./pages/Characters";
 import Infoscharacter from "./pages/Infoscharacter";
 import Comics from "./pages/Comics";
@@ -13,16 +14,25 @@ import Login from "./pages/Login";
 //components
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-// import Pagination from "./components/Pagination";
+
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+library.add(faBars);
 
 function App() {
-  // const [data, setData] = useState();
-  // const totalCharacters = 200;
-  // const [setCurrentPage] = useState(1);
-  // const [charactersPerPage] = useState(100);
   const [token, setToken] = useState(Cookies.get("token-user" || null));
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [searchResults, setSearchResults] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPageData, setCurrentPageData] = useState([]);
 
-  const [search, setSearch] = useState("");
+  const onChangeCurrentPageData = useCallback((pageData) => {
+    setCurrentPageData(() => pageData);
+  }, []);
+
+  const onChangeCurrentPage = useCallback((value) => {
+    setCurrentPage(() => value);
+  }, []);
 
   const handleToken = (token) => {
     if (token) {
@@ -40,23 +50,48 @@ function App() {
     <Router>
       <Header
         token={token}
-        search={search}
+        searchResults={searchResults}
+        setSearchResults={setSearchResults}
         handleToken={handleToken}
         setToken={setToken}
-        setSearch={setSearch}
+        modalIsOpen={modalIsOpen}
+        setModalIsOpen={setModalIsOpen}
       />
 
       <Routes>
-        <Route path="/" element={<Characters search={search} />} />
+        <Route path="/" element={<Login handleToken={handleToken} />} />
+        <Route
+          path="/characters"
+          element={
+            <Characters
+              searchResults={searchResults}
+              currentPage={currentPage}
+              onChangeCurrentPage={onChangeCurrentPage}
+              currentPageData={currentPageData}
+              onChangeCurrentPageData={onChangeCurrentPageData}
+            />
+          }
+        />
 
         <Route path="/signup" element={<Signup handleToken={handleToken} />} />
         <Route path="/login" element={<Login handleToken={handleToken} />} />
         <Route
           path="/character/:characterId"
-          element={<Infoscharacter search={search} />}
+          element={<Infoscharacter searchResults={searchResults} />}
         />
         <Route path="/comics/:characterId" element={<Comicslist />} />
-        <Route path="/comics" element={<Comics search={search} />} />
+        <Route
+          path="/comics"
+          element={
+            <Comics
+              searchResults={searchResults}
+              currentPage={currentPage}
+              onChangeCurrentPage={onChangeCurrentPage}
+              currentPageData={currentPageData}
+              onChangeCurrentPageData={onChangeCurrentPageData}
+            />
+          }
+        />
       </Routes>
 
       <Footer />

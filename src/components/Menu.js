@@ -2,21 +2,20 @@ import { Link } from "react-router-dom";
 
 const Menu = () => {
   return (
-    <ul style={{ display: "flex" }}>
+    <ul style={{ display: "flex", width: "15%" }}>
       <li>
-        <Link to="/">
-          <button style={{ width: "80px" }}>Characters</button>
+        <Link to="/characters">
+          <button>Characters</button>
         </Link>
       </li>
       <li>
         <Link to="/comics">
-          <button style={{ width: "80px" }}>Comics</button>
+          <button>Comics</button>
         </Link>
       </li>
       <li>
         <Link>
-          <div>{}</div>
-          <button style={{ width: "80px" }}>Favories</button>
+          <button>Favories</button>
         </Link>
       </li>
     </ul>

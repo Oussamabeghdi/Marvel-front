@@ -1,9 +1,18 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Details from "../components/Details";
+import Paginate from "../components/Paginate";
+import { Oval } from "react-loader-spinner";
 // import { Link } from "react-router-dom";
 
-const Characters = ({ search }) => {
+const Characters = ({
+  searchResults,
+  currentPage,
+  setCurrentPage,
+  currentPageData,
+  onChangeCurrentPage,
+  onChangeCurrentPageData,
+}) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -12,7 +21,7 @@ const Characters = ({ search }) => {
       try {
         const response = await axios.get(
           // `https://site--marvel-backend--9gtnl5qyn2yw.code.run/characters?name=${search}`
-          `http://localhost:4000/characters?name=${search}`
+          `http://localhost:4000/characters?name=${searchResults}`
         );
 
         console.log(response.data);
@@ -24,15 +33,32 @@ const Characters = ({ search }) => {
     };
 
     fetchData();
-  }, [search]);
+  }, [searchResults]);
 
   return isLoading ? (
-    <p>Loading...</p>
+    <Oval
+      ariaLabel="loading-indicator"
+      height={100}
+      width={100}
+      strokeWidth={1000}
+      strokeWidthSecondary={1000}
+      color="black"
+      secondaryColor="red"
+    />
   ) : (
-    <div className="container">
-      {data.results.map((character) => {
-        return <Details key={character._id} item={character} />;
-      })}
+    <div className="wrapper-characters">
+      <div className="container">
+        {currentPageData.map((character) => {
+          return <Details key={character._id} item={character} />;
+        })}
+      </div>
+      <Paginate
+        data={data.results}
+        itemsPerPage={30}
+        onChangeCurrentPageData={onChangeCurrentPageData}
+        currentPage={currentPage}
+        onChangeCurrentPage={onChangeCurrentPage}
+      />
     </div>
   );
 };

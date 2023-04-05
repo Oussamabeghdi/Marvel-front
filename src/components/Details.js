@@ -1,15 +1,45 @@
 import { Link } from "react-router-dom";
 // import CharacterCard from "./CharaterCard";
-// import { useState } from "react";
-// import Cookies from "js-cookie";
+import { useState, useEffect } from "react";
 
 const Details = ({ item }) => {
-  // const [favorites, setFavorites] = useState(
-  //   Cookies.getJSON("favorites") || []
-  // );
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  useEffect(() => {
+    // Récupération des favoris actuels de l'utilisateur depuis Local Storage
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    const isAlreadyFavorite = favorites.includes(item._id);
+
+    setIsFavorite(isAlreadyFavorite);
+  }, [item]);
+
+  const onAddFavoriteInLocalStorage = () => {
+    if (!isFavorite) {
+      const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+      // Ajouter le personnage aux favoris
+      const newFavorites = [...favorites, item._id];
+
+      localStorage.setItem("favorites", JSON.stringify(newFavorites));
+    }
+    setIsFavorite(true);
+  };
+
+  const onRemoveFavorite = () => {
+    if (isFavorite) {
+      const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+      // Supprimer le personnage des favoris
+      const newFavorites = favorites.filter(
+        (favorite) => favorite !== item._id
+      );
+
+      localStorage.setItem("favorites", JSON.stringify(newFavorites));
+
+      return setIsFavorite(false);
+    }
+  };
   const picture = item.thumbnail.path + "." + item.thumbnail.extension;
   return (
-    <section className="main-container">
+    <section>
       <Link to={`/character/${item._id}`}>
         <div className="details-container">
           <p className="character-name">{item.name}</p>
@@ -17,6 +47,11 @@ const Details = ({ item }) => {
           <img className="image-character" src={picture} alt="heros" />
         </div>
       </Link>
+      <button
+        onClick={isFavorite ? onRemoveFavorite : onAddFavoriteInLocalStorage}
+      >
+        {isFavorite ? "-" : "+"}
+      </button>
     </section>
   );
 };
