@@ -1,7 +1,11 @@
+import logo from "../img/logo.png";
+import "../styles/Footer.css";
 const Footer = () => {
   return (
     <footer>
-      <span></span>
+      <div className="footer">
+        <img src={logo} alt="" />
+      </div>
     </footer>
   );
 };

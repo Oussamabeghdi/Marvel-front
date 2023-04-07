@@ -57,6 +57,7 @@ const Comics = ({
                 </div>
 
                 <img
+                  className="comics-img"
                   src={item.thumbnail.path + "." + item.thumbnail.extension}
                   alt="comics "
                 />
@@ -65,10 +66,10 @@ const Comics = ({
           );
         })}
       </div>
-      <div>
+      <div className="paginate-comics">
         <Paginate
           data={data.results}
-          itemsPerPage={28}
+          itemsPerPage={16}
           onChangeCurrentPageData={onChangeCurrentPageData}
           currentPage={currentPage}
           onChangeCurrentPage={onChangeCurrentPage}

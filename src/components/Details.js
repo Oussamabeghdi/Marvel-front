@@ -40,18 +40,20 @@ const Details = ({ item }) => {
   const picture = item.thumbnail.path + "." + item.thumbnail.extension;
   return (
     <section>
-      <Link to={`/character/${item._id}`}>
-        <div className="details-container">
+      <div className="details-container">
+        <Link to={`/character/${item._id}`}>
           <p className="character-name">{item.name}</p>
           <p className="character-description">{item.description} </p>
-          <img className="image-character" src={picture} alt="heros" />
-        </div>
-      </Link>
-      <button
-        onClick={isFavorite ? onRemoveFavorite : onAddFavoriteInLocalStorage}
-      >
-        {isFavorite ? "-" : "+"}
-      </button>
+          <div className="image-container">
+            <img className="image-character" src={picture} alt="heros" />
+          </div>
+        </Link>
+        <button
+          onClick={isFavorite ? onRemoveFavorite : onAddFavoriteInLocalStorage}
+        >
+          {isFavorite ? "-" : "+"}
+        </button>
+      </div>
     </section>
   );
 };

@@ -52,13 +52,15 @@ const Characters = ({
           return <Details key={character._id} item={character} />;
         })}
       </div>
-      <Paginate
-        data={data.results}
-        itemsPerPage={30}
-        onChangeCurrentPageData={onChangeCurrentPageData}
-        currentPage={currentPage}
-        onChangeCurrentPage={onChangeCurrentPage}
-      />
+      <div>
+        <Paginate
+          data={data.results}
+          itemsPerPage={16}
+          onChangeCurrentPageData={onChangeCurrentPageData}
+          currentPage={currentPage}
+          onChangeCurrentPage={onChangeCurrentPage}
+        />
+      </div>
     </div>
   );
 };

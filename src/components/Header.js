@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Searchbar from "./Searchbar";
 import Menu from "./Menu";
 
@@ -13,8 +13,14 @@ const Header = ({ handleToken, token, searchResults, setSearchResults }) => {
   return (
     <header>
       <section>
-        <Menu />
-        <FontAwesomeIcon icon="bars" />
+        <div className="header-logo">
+          <img src={fond} alt="marvel" />
+        </div>
+        <div>
+          <Menu />
+        </div>
+
+        {/* <FontAwesomeIcon icon="bars" /> */}
         <Searchbar
           // className="input-search"
           searchResults={searchResults}
@@ -46,9 +52,6 @@ const Header = ({ handleToken, token, searchResults, setSearchResults }) => {
           </div>
         )}
       </section>
-      <div className="header-logo">
-        <img src={fond} alt="" />
-      </div>
     </header>
   );
 };
