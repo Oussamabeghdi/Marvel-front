@@ -46,13 +46,13 @@ const Characters = ({
       secondaryColor="red"
     />
   ) : (
-    <div className="wrapper-characters">
+    <section className="wrapper-characters">
       <div className="container">
         {currentPageData.map((character) => {
           return <Characterscard key={character._id} item={character} />;
         })}
       </div>
-      <div>
+      <div className="paginate-characters">
         <Paginate
           data={data.results}
           itemsPerPage={16}
@@ -61,7 +61,7 @@ const Characters = ({
           onChangeCurrentPage={onChangeCurrentPage}
         />
       </div>
-    </div>
+    </section>
   );
 };
 
