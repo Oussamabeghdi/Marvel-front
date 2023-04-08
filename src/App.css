@@ -60,7 +60,10 @@ header button {
   object-fit: cover;
   border-radius: 10px;
 }
-
+.nav-link {
+  display: flex;
+  width: 15%;
+}
 /* ---------Characters---------- */
 
 .details-container {
@@ -74,7 +77,7 @@ header button {
 }
 .wrapper-characters {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   flex-direction: column;
   align-items: center;
   background-image: url("../src/img/images.jpeg");
@@ -210,6 +213,12 @@ header button {
   width: 500px;
   height: 500px;
 }
+.red {
+  background-color: red;
+}
+.gray {
+  background-color: gray;
+}
 
 /* ---------Form----------- */
 
@@ -239,7 +248,7 @@ form p {
   color: white;
 } */
 /* @media (max-width: 1024px) */
-@media screen and (max-width: 930px) {
+@media screen and (max-width: 940px) {
   header {
     background-color: black;
     height: 100px;
@@ -254,16 +263,24 @@ form p {
   header button {
     display: block;
   }
-  header img {
-    height: 40px;
-    width: 60px;
-    border-radius: 4px;
-    display: inline;
-    align-items: center;
-    justify-content: center;
+  .nav-link {
+    display: none;
   }
-  .container {
-    height: 100%;
-    width: 100%;
+  .nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: black;
+    color: #ffffff;
+  }
+  .nav-bar.nav-link {
+    display: block;
+    margin: 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
   }
 }

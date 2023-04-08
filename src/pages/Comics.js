@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Paginate from "../components/Paginate";
-import { Link } from "react-router-dom";
 import { Oval } from "react-loader-spinner";
+import Comicscard from "../components/Comicscard";
 // import Paginate from "../components/Paginate";
-
-// import Comicslist from "./Comicslist";
 
 const Comics = ({
   searchResults,
@@ -48,22 +46,7 @@ const Comics = ({
     <section className="wrapper-comics">
       <div className="comics-container">
         {currentPageData.map((item, index) => {
-          return (
-            <div key={index} className="comics">
-              <Link to={`/comics/${item._id}`}>
-                <div>
-                  <p className="comics-title ">{item.title}</p>
-                  <p className="comics-description ">{item.description}</p>
-                </div>
-
-                <img
-                  className="comics-img"
-                  src={item.thumbnail.path + "." + item.thumbnail.extension}
-                  alt="comics "
-                />
-              </Link>
-            </div>
-          );
+          return <Comicscard item={item} key={index} />;
         })}
       </div>
       <div className="paginate-comics">

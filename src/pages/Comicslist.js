@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-// import { Link } from "react-router-dom";
 
 const Comicslist = () => {
   const [data, setData] = useState();
@@ -33,7 +32,6 @@ const Comicslist = () => {
   ) : (
     <section>
       {data.results.map((elem, index) => {
-        // console.log(elem);
         return (
           <div key={index}>
             <img

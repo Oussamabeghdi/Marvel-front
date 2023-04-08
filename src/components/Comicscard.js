@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-// import CharacterCard from "./CharaterCard";
 import { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Details = ({ item }) => {
+const Comicscard = ({ item }) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
@@ -37,25 +37,27 @@ const Details = ({ item }) => {
       return setIsFavorite(false);
     }
   };
-  const picture = item.thumbnail.path + "." + item.thumbnail.extension;
   return (
-    <section>
-      <div className="details-container">
-        <Link to={`/character/${item._id}`}>
-          <p className="character-name">{item.name}</p>
-          <p className="character-description">{item.description} </p>
-          <div className="image-container">
-            <img className="image-character" src={picture} alt="heros" />
-          </div>
-        </Link>
-        <button
-          onClick={isFavorite ? onRemoveFavorite : onAddFavoriteInLocalStorage}
-        >
-          {isFavorite ? "-" : "+"}
-        </button>
-      </div>
-    </section>
+    <div className="comics">
+      <Link to={`/comics/${item._id}`}>
+        <div>
+          <p className="comics-title ">{item.title}</p>
+          <p className="comics-description ">{item.description}</p>
+        </div>
+
+        <img
+          className="comics-img"
+          src={item.thumbnail.path + "." + item.thumbnail.extension}
+          alt="comics "
+        />
+      </Link>
+      <button
+        onClick={isFavorite ? onRemoveFavorite : onAddFavoriteInLocalStorage}
+      >
+        <FontAwesomeIcon icon="heart" color={isFavorite ? "red" : "gray"} />
+      </button>
+    </div>
   );
 };
 
-export default Details;
+export default Comicscard;

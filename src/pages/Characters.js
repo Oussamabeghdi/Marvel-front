@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Details from "../components/Details";
 import Paginate from "../components/Paginate";
 import { Oval } from "react-loader-spinner";
+import Characterscard from "../components/Characterscard";
 // import { Link } from "react-router-dom";
 
 const Characters = ({
@@ -49,7 +49,7 @@ const Characters = ({
     <div className="wrapper-characters">
       <div className="container">
         {currentPageData.map((character) => {
-          return <Details key={character._id} item={character} />;
+          return <Characterscard key={character._id} item={character} />;
         })}
       </div>
       <div>

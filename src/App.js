@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useCallback } from "react";
 import Cookies from "js-cookie";
 
-// import Home from "./pages/Home";
 import Characters from "./pages/Characters";
 import Infoscharacter from "./pages/Infoscharacter";
 import Comics from "./pages/Comics";
@@ -16,8 +15,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-library.add(faBars);
+import { faBars, faHeart } from "@fortawesome/free-solid-svg-icons";
+library.add(faBars, faHeart);
 
 function App() {
   const [token, setToken] = useState(Cookies.get("token-user" || null));
