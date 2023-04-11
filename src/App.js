@@ -24,6 +24,7 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const [currentPageData, setCurrentPageData] = useState([]);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   const onChangeCurrentPageData = useCallback((pageData) => {
     setCurrentPageData(() => pageData);

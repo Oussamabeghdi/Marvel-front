@@ -3,6 +3,7 @@ import axios from "axios";
 import Paginate from "../components/Paginate";
 import { Oval } from "react-loader-spinner";
 import Comicscard from "../components/Comicscard";
+import "../styles/Comics.css";
 // import Paginate from "../components/Paginate";
 
 const Comics = ({
@@ -20,7 +21,6 @@ const Comics = ({
       try {
         const response = await axios.get(
           `https://site--marvel-backend--9gtnl5qyn2yw.code.run/comics?title=${searchResults}`
-          // `http://localhost:4000/comics?title=${searchResults}`
         );
         // console.log(response.data);
         setData(response.data);

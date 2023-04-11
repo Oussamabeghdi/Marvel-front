@@ -1,6 +1,18 @@
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Menu = ({ token }) => {
+  const [nav, setNav] = useState(false);
+  const [showFavorites, setShowFavorites] = useState(false);
+  const [favorites, setFavorites] = useState([]);
+
+  const handleFavoriteClick = () => {
+    const storedFavorites = JSON.parse(
+      localStorage.getItem("favorites") || "[]"
+    );
+    setFavorites(storedFavorites);
+    setShowFavorites(true);
+  };
   const navigate = useNavigate();
 
   const handleClickCharacters = () => {
@@ -17,11 +29,16 @@ const Menu = ({ token }) => {
       navigate("/login");
     }
   };
+  const handleNav = () => {
+    setNav(!nav);
+  };
+  // const handleShowFavorites = () => {
+
+  // };
 
   return (
-    <ul className="menu">
-      <div className="nav-link">
-        {" "}
+    <div className="nav-link">
+      <ul className="menu">
         <li>
           <button onClick={handleClickCharacters}>Characters</button>
         </li>
@@ -33,8 +50,8 @@ const Menu = ({ token }) => {
             <button>Favories</button>
           </Link>
         </li>
-      </div>
-    </ul>
+      </ul>
+    </div>
   );
 };
 

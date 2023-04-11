@@ -1,0 +1,56 @@
+.infos-container {
+  box-sizing: border-box;
+  color: white;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: normal;
+  background-color: black;
+}
+/* .infos-container > div {
+  height: 100vh;
+  text-align: center;
+  padding: 50px;
+} */
+.infos-div {
+  flex: 1.3;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  align-items: center;
+  background-color: black;
+}
+.title,
+.description {
+  margin-bottom: 30px;
+}
+.container-title-description {
+  padding: 20px;
+}
+.infos-div img {
+  border-color: white;
+  border-radius: 5px;
+}
+.comic-list {
+  height: 100vh;
+  flex: 1;
+  display: flex;
+  padding-top: 30px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: url("../img/superhero-muscle-lumiere-red-500x.jpg") center/contain;
+}
+.infos-container li {
+  margin: 8px;
+  display: flex;
+  height: 50px;
+  width: 300px;
+  border: 2px solid white;
+  background-color: rgb(3, 2, 7);
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  align-items: center;
+  border-radius: 5px;
+}

@@ -1,6 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import "../styles/Login.css";
+import picture from "../img/captain america.jpg";
 
 const Login = ({ handleToken }) => {
   const [email, setEmail] = useState("");
@@ -13,7 +15,6 @@ const Login = ({ handleToken }) => {
     try {
       const response = await axios.post(
         "https://site--marvel-backend--9gtnl5qyn2yw.code.run/login",
-        // "http://localhost:4000/login",
         {
           email: email,
           password: password,
@@ -31,9 +32,8 @@ const Login = ({ handleToken }) => {
   };
 
   return (
-    <div className="login-container">
-      {/* <img src={moonKnight} alt="" /> */}
-      <form onSubmit={handleLogin}>
+    <section>
+      <form className="login-container" onSubmit={handleLogin}>
         <h1>Se connecter</h1>
         <input
           value={email}
@@ -51,12 +51,12 @@ const Login = ({ handleToken }) => {
             setPassword(event.target.value);
           }}
         />
-        <input type="submit" value="Se connecter" />
+        <input className="login-btn" type="submit" value="Se connecter" />
         <Link to="/signup">
-          <p>Pas encore de compte ? Inscris-toi</p>
+          <h1>Pas encore de compte ? Inscris-toi !</h1>
         </Link>
       </form>
-    </div>
+    </section>
   );
 };
 

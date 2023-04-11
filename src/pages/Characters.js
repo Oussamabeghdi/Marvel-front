@@ -3,6 +3,7 @@ import axios from "axios";
 import Paginate from "../components/Paginate";
 import { Oval } from "react-loader-spinner";
 import Characterscard from "../components/Characterscard";
+import "../styles/Characters.css";
 // import { Link } from "react-router-dom";
 
 const Characters = ({
@@ -21,7 +22,6 @@ const Characters = ({
       try {
         const response = await axios.get(
           `https://site--marvel-backend--9gtnl5qyn2yw.code.run/characters?name=${searchResults}`
-          // `http://localhost:4000/characters?name=${searchResults}`
         );
 
         console.log(response.data);

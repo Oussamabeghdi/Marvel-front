@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Characterscard = ({ item }) => {
-  // console.log(item);
   const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {

@@ -1,6 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import "../styles/Signup.css";
+import picture from "../img/violette-personnagedefiction-500x.jpg";
 
 const Signup = ({ handleToken }) => {
   const [email, setEmail] = useState("");
@@ -18,7 +20,6 @@ const Signup = ({ handleToken }) => {
     try {
       const response = await axios.post(
         "https://site--marvel-backend--9gtnl5qyn2yw.code.run/signup",
-        // "http://localhost:4000/Signup",
         {
           username: username,
           email: email,
@@ -34,7 +35,7 @@ const Signup = ({ handleToken }) => {
     } catch (error) {
       if (error.response.data.message === "This email already has an account") {
         setErrorMessage(
-          "Cet email est déjà utilisé, veuillez créer un compte avec un mail valide."
+          "Cet email est déjà utilisé, veuillez créer un compte avec un email valide."
         );
       }
       if (error.response.data.message === "Missing parameters") {
@@ -44,22 +45,12 @@ const Signup = ({ handleToken }) => {
   };
 
   return (
-    <div className="form-container">
-      <form onSubmit={handleSignup}>
+    <section>
+      <form className="signup-container" onSubmit={handleSignup}>
         <h1>S'inscrire</h1>
-
         <input
-          id="Nom d'utilisateur"
-          value={username}
-          type="text"
-          placeholder="Nom d'utilisateur"
-          onChange={(event) => {
-            setUsername(event.target.value);
-          }}
-        />
-
-        <input
-          id="Email"
+          label="email"
+          id="email"
           value={email}
           type="mail"
           placeholder="Email"
@@ -91,10 +82,10 @@ const Signup = ({ handleToken }) => {
         <input className="signup-btn" type="submit" value="S'inscrire" />
         {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
         <Link to="/login">
-          <p>Tu as déjà un compte, connecte-toi !</p>
+          <h1>Tu as déjà un compte? connecte-toi !</h1>
         </Link>
       </form>
-    </div>
+    </section>
   );
 };
 
