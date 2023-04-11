@@ -1,18 +1,19 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Menu = ({ token }) => {
-  const [nav, setNav] = useState(false);
-  const [showFavorites, setShowFavorites] = useState(false);
-  const [favorites, setFavorites] = useState([]);
+  // const [nav, setNav] = useState(false);
+  // const [showFavorites, setShowFavorites] = useState(false);
+  // const [favorites, setFavorites] = useState([]);
 
-  const handleFavoriteClick = () => {
-    const storedFavorites = JSON.parse(
-      localStorage.getItem("favorites") || "[]"
-    );
-    setFavorites(storedFavorites);
-    setShowFavorites(true);
-  };
+  // const handleFavoriteClick = () => {
+  //   const storedFavorites = JSON.parse(
+  //     localStorage.getItem("favorites") || "[]"
+  //   );
+  //   setFavorites(storedFavorites);
+  //   setShowFavorites(true);
+  // };
   const navigate = useNavigate();
 
   const handleClickCharacters = () => {
@@ -22,16 +23,10 @@ const Menu = ({ token }) => {
       navigate("/login");
     }
   };
-  const handleClickComics = () => {
-    if (token) {
-      navigate("/comics");
-    } else {
-      navigate("/login");
-    }
-  };
-  const handleNav = () => {
-    setNav(!nav);
-  };
+
+  // const handleNav = () => {
+  //   setNav(!nav);
+  // };
   // const handleShowFavorites = () => {
 
   // };
@@ -42,15 +37,36 @@ const Menu = ({ token }) => {
         <li>
           <button onClick={handleClickCharacters}>Characters</button>
         </li>
-        <li>
-          <button onClick={handleClickComics}>Comics</button>
-        </li>
+        <Link to={token ? "/comics" : "/login"}>
+          <li>
+            <button>Comics</button>
+          </li>
+        </Link>
+
         <li>
           <Link>
             <button>Favories</button>
           </Link>
         </li>
       </ul>
+      <FontAwesomeIcon icon="xmark" />
+      <FontAwesomeIcon icon="bars" className="nav-bar" />
+      {/* <div className="">
+        <li>
+          <button onClick={handleClickCharacters}>Characters</button>
+        </li>
+        <Link to={token ? "/comics" : "/login"}>
+          <li>
+            <button>Comics</button>
+          </li>
+        </Link>
+
+        <li>
+          <Link>
+            <button>Favories</button>
+          </Link>
+        </li>
+      </div> */}
     </div>
   );
 };

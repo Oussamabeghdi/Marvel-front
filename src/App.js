@@ -15,8 +15,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faBars, faHeart } from "@fortawesome/free-solid-svg-icons";
-library.add(faBars, faHeart);
+import { faBars, faHeart, faXmark } from "@fortawesome/free-solid-svg-icons";
+library.add(faBars, faHeart, faXmark);
 
 function App() {
   const [token, setToken] = useState(Cookies.get("token-user" || null));
@@ -24,7 +24,7 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const [currentPageData, setCurrentPageData] = useState([]);
-  const [isFavorite, setIsFavorite] = useState(false);
+  // const [isFavorite, setIsFavorite] = useState(false);
 
   const onChangeCurrentPageData = useCallback((pageData) => {
     setCurrentPageData(() => pageData);

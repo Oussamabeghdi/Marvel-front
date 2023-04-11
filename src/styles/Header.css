@@ -54,6 +54,7 @@ header button {
     background-color: black;
     height: 80px;
   }
+
   .header-logo {
     display: flex;
     justify-content: space-between;
@@ -67,9 +68,10 @@ header button {
     display: flex;
     display: none;
   }
-  .nav-link {
+  .nav-link ul {
     display: none;
   }
+
   .nav-bar {
     display: flex;
     padding: 1rem;

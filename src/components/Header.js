@@ -1,7 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import Searchbar from "./Searchbar";
 import Menu from "./Menu";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../styles/Header.css";
 // import logo from "../img/logo.png";
 
@@ -14,8 +13,6 @@ const Header = ({ handleToken, token, searchResults, setSearchResults }) => {
     <header className="header-container">
       <div className="header-logo">
         <img src={fond} alt="marvel" />
-
-        <FontAwesomeIcon icon="bars" className="nav-bar" />
       </div>
       <div>
         <Menu token={token} />

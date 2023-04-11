@@ -2,7 +2,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import "../styles/Login.css";
-import picture from "../img/captain america.jpg";
 
 const Login = ({ handleToken }) => {
   const [email, setEmail] = useState("");

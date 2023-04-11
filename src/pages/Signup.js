@@ -2,11 +2,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import "../styles/Signup.css";
-import picture from "../img/violette-personnagedefiction-500x.jpg";
 
 const Signup = ({ handleToken }) => {
   const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -21,7 +19,6 @@ const Signup = ({ handleToken }) => {
       const response = await axios.post(
         "https://site--marvel-backend--9gtnl5qyn2yw.code.run/signup",
         {
-          username: username,
           email: email,
           password: password,
           confirmPassword: confirmPassword,
