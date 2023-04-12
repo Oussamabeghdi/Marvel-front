@@ -1,14 +1,10 @@
-import { Link, useNavigate } from "react-router-dom";
 import Searchbar from "./Searchbar";
 import Menu from "./Menu";
 import "../styles/Header.css";
-// import logo from "../img/logo.png";
 
 import fond from "../img/fond-decran-marvel.jpg";
 
 const Header = ({ handleToken, token, searchResults, setSearchResults }) => {
-  const navigate = useNavigate();
-
   return (
     <header className="header-container">
       <div className="header-logo">

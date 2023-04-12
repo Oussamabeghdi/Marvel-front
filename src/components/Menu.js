@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Searchbar from "./Searchbar";
+// import Searchbar from "./Searchbar";
 import "../styles/Header.css";
 
 const Menu = ({ token, handleToken }) => {
@@ -29,16 +29,12 @@ const Menu = ({ token, handleToken }) => {
   const handleNav = () => {
     setNav(!nav);
   };
-  // const handleShowFavorites = () => {
-
-  // };
 
   return (
     <div className="nav-link">
       {/* <ul className="menu"> */}
 
-      <ul className={nav ? "menu" + "active" : "menu"}>
-        {" "}
+      <ul className={nav ? "menu active" : " menu"}>
         <div className="header-btn">
           <li>
             <button onClick={handleClickCharacters}>Characters</button>
@@ -88,24 +84,6 @@ const Menu = ({ token, handleToken }) => {
           <FontAwesomeIcon icon="bars" size="25" />
         )}
       </div>
-
-      {/* className="nav-bar"className="nav-bar" */}
-      {/* <div className="">
-        <li>
-          <button onClick={handleClickCharacters}>Characters</button>
-        </li>
-        <Link to={token ? "/comics" : "/login"}>
-          <li>
-            <button>Comics</button>
-          </li>
-        </Link>
-
-        <li>
-          <Link>
-            <button>Favories</button>
-          </Link>
-        </li>
-      </div> */}
     </div>
   );
 };

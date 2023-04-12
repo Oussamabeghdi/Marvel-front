@@ -83,13 +83,12 @@
   } */
   .mobile-btn {
     display: flex;
-
     display: block;
-    position: absolute;
+    position: relative;
     right: 1rem;
     cursor: pointer;
     z-index: 10;
-    /* padding: 1rem; */
+    padding: 1rem;
     font-size: 25px;
     background-color: black;
     color: #ffffff;
@@ -109,9 +108,9 @@
     z-index: 10;
     transition: left 1s;
   }
-  /* .active {
+  .active {
     left: 0;
-  } */
+  }
   .nav-link button {
     font-size: 1.2rem;
     font-family: "Poppins", sans-serif;
