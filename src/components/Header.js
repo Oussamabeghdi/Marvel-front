@@ -14,15 +14,15 @@ const Header = ({ handleToken, token, searchResults, setSearchResults }) => {
       <div className="header-logo">
         <img src={fond} alt="marvel" />
       </div>
-      <div>
-        <Menu token={token} />
+      <div className="menu-component">
+        <Menu token={token} handleToken={handleToken} />
       </div>
 
       <Searchbar
         searchResults={searchResults}
         setSearchResults={setSearchResults}
       />
-      {token ? (
+      {/* {token ? (
         <button
           onClick={() => {
             handleToken(null);
@@ -33,7 +33,6 @@ const Header = ({ handleToken, token, searchResults, setSearchResults }) => {
         </button>
       ) : (
         <div className="menu-container">
-          {/* <Searchbar search={search} setSearch={setSearch} /> */}
 
           <Link to="/signup">
             <button>
@@ -46,7 +45,7 @@ const Header = ({ handleToken, token, searchResults, setSearchResults }) => {
             </button>
           </Link>
         </div>
-      )}
+      )} */}
     </header>
   );
 };
