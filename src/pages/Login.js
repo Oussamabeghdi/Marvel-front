@@ -34,26 +34,34 @@ const Login = ({ handleToken }) => {
     <section>
       <form className="login-container" onSubmit={handleLogin}>
         <h1>Se connecter</h1>
-        <input
-          value={email}
-          type="email"
-          placeholder="Email"
-          onChange={(event) => {
-            setEmail(event.target.value);
-          }}
-        />
-        <input
-          value={password}
-          type="password"
-          placeholder="Mot de passe"
-          onChange={(event) => {
-            setPassword(event.target.value);
-          }}
-        />
-        <input className="login-btn" type="submit" value="Se connecter" />
-        <Link to="/signup">
-          <h1>Pas encore de compte ? Inscris-toi !</h1>
-        </Link>
+        <div>
+          <label>email</label>
+          <input
+            value={email}
+            type="email"
+            // placeholder="Email"
+            onChange={(event) => {
+              setEmail(event.target.value);
+            }}
+          />
+        </div>
+        <div>
+          <label>Password</label>
+          <input
+            value={password}
+            type="password"
+            // placeholder="Mot de passe"
+            onChange={(event) => {
+              setPassword(event.target.value);
+            }}
+          />
+        </div>
+        <div>
+          <input type="submit" value="Se connecter" />
+          <Link to="/signup">
+            <p className="span">Pas encore de compte ? Inscris-toi !</p>
+          </Link>{" "}
+        </div>
       </form>
     </section>
   );

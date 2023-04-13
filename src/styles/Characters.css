@@ -68,10 +68,24 @@
   align-items: center;
   padding-bottom: 10px;
 }
+.red {
+  background-color: red;
+}
+.gray {
+  background-color: gray;
+}
 @media screen and (max-width: 740px) {
   .wrapper-characters {
     grid-template-columns: 1fr;
   }
   .container {
+  }
+  .paginate-characters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+    max-width: 700px;
+    width: 100%;
   }
 }

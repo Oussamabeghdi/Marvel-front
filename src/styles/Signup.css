@@ -1,8 +1,8 @@
 .signup-container {
-  background-image: url("../img/captain\ america.jpg");
+  background-image: url("../img/format-arw-PXjQaGxi4JA-unsplash.jpg");
   background-size: cover;
   background-position: center;
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -19,9 +19,13 @@
   height: 40px;
   border-radius: 5px;
   width: 300px;
-  margin-top: 20px;
+  background-color: transparent;
   padding: 5px;
 }
+.signup-container input {
+  color: white;
+}
+
 .signup-container input :focus {
   outline: none;
 }
@@ -31,6 +35,11 @@ form p {
 }
 .signup-btn {
   margin-top: 15px;
-  background-color: red;
+  /* background-color: red; */
+  transition: 2s;
   color: white;
+}
+.signup-btn:hover {
+  /* background-color: red; */
+  transition: background-color 2s;
 }

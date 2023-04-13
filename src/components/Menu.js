@@ -25,6 +25,13 @@ const Menu = ({ token, handleToken }) => {
       navigate("/login");
     }
   };
+  const handleClickComics = () => {
+    if (token) {
+      navigate("/comics");
+    } else {
+      navigate("/login");
+    }
+  };
 
   const handleNav = () => {
     setNav(!nav);
@@ -39,11 +46,9 @@ const Menu = ({ token, handleToken }) => {
           <li>
             <button onClick={handleClickCharacters}>Characters</button>
           </li>
-          <Link to={token ? "/comics" : "/login"}>
-            <li>
-              <button>Comics</button>
-            </li>
-          </Link>
+          <li>
+            <button onClick={handleClickComics}>Comics</button>
+          </li>
 
           <li>
             <Link>
@@ -52,26 +57,28 @@ const Menu = ({ token, handleToken }) => {
           </li>
 
           {token ? (
-            <button
-              onClick={() => {
-                handleToken(null);
-                navigate("/");
-              }}
-            >
-              Se déconnecter
-            </button>
+            <li>
+              <button
+                onClick={() => {
+                  handleToken(null);
+                  navigate("/");
+                }}
+              >
+                Se déconnecter
+              </button>
+            </li>
           ) : (
             <>
-              <Link to="/signup">
-                <button>
-                  <p>S'inscrire</p>
-                </button>
-              </Link>
-              <Link to="/login">
-                <button>
-                  <p>Se connecter</p>
-                </button>
-              </Link>
+              <li>
+                <Link to="/signup">
+                  <button>S'inscrire</button>
+                </Link>
+              </li>
+              <li>
+                <Link to="/login">
+                  <button>Se connecter</button>
+                </Link>
+              </li>
             </>
           )}
         </div>
