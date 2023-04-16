@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import Searchbar from "./Searchbar";
 import "../styles/Header.css";
 
 const Menu = ({ token, handleToken }) => {
@@ -51,14 +50,15 @@ const Menu = ({ token, handleToken }) => {
           </li>
 
           <li>
-            <Link>
-              <button>Favories</button>
+            <Link to="/character/5fcf91f4d8a2480017b91453">
+              <button>Favorites</button>
             </Link>
           </li>
 
           {token ? (
             <li>
               <button
+                className="logout-btn"
                 onClick={() => {
                   handleToken(null);
                   navigate("/");

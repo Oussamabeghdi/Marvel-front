@@ -13,7 +13,6 @@ import Login from "./pages/Login";
 //components
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBars, faHeart, faXmark } from "@fortawesome/free-solid-svg-icons";
 library.add(faBars, faHeart, faXmark);
@@ -24,7 +23,12 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const [currentPageData, setCurrentPageData] = useState([]);
+
   // const [isFavorite, setIsFavorite] = useState(false);
+
+  // const hideSearchBar = () => {
+  //   setShowSearchBar(false);
+  // };
 
   const onChangeCurrentPageData = useCallback((pageData) => {
     setCurrentPageData(() => pageData);
@@ -75,6 +79,7 @@ function App() {
 
         <Route path="/signup" element={<Signup handleToken={handleToken} />} />
         <Route path="/login" element={<Login handleToken={handleToken} />} />
+
         <Route
           path="/character/:characterId"
           element={<Infoscharacter searchResults={searchResults} />}

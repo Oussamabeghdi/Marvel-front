@@ -26,6 +26,9 @@
   border: hidden;
   padding: 1rem;
 }
+.searchbar {
+  display: inline;
+}
 
 .input-search {
   width: 300px;
@@ -35,6 +38,7 @@
   padding-right: 60px;
   border: none;
   padding: 0.8rem;
+  /* display: inline; */
 }
 
 .input-search:focus {

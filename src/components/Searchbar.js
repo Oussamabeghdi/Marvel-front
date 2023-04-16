@@ -12,7 +12,7 @@ const Searchbar = ({ searchResults, setSearchResults }) => {
   };
 
   return (
-    <div>
+    <div className="searchbar">
       <input
         className="input-search"
         type="text"

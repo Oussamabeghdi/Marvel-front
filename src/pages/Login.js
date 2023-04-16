@@ -31,7 +31,7 @@ const Login = ({ handleToken }) => {
   };
 
   return (
-    <section>
+    <section className="login">
       <form className="login-container" onSubmit={handleLogin}>
         <h1>Se connecter</h1>
         <div>
@@ -60,7 +60,7 @@ const Login = ({ handleToken }) => {
           <input type="submit" value="Se connecter" />
           <Link to="/signup">
             <p className="span">Pas encore de compte ? Inscris-toi !</p>
-          </Link>{" "}
+          </Link>
         </div>
       </form>
     </section>

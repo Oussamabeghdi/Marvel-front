@@ -15,5 +15,7 @@ h1 {
   font-size: 20px;
   color: white;
 }
-
+.login.searchbar {
+  display: none;
+}
 /* -------Login------- */

@@ -4,6 +4,8 @@ import axios from "axios";
 import "../styles/Signup.css";
 
 const Signup = ({ handleToken }) => {
+  const [username, setUsername] = useState("");
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -19,6 +21,7 @@ const Signup = ({ handleToken }) => {
       const response = await axios.post(
         "https://site--marvel-backend--9gtnl5qyn2yw.code.run/signup",
         {
+          username: username,
           email: email,
           password: password,
           confirmPassword: confirmPassword,
@@ -45,6 +48,16 @@ const Signup = ({ handleToken }) => {
     <section>
       <form className="signup-container" onSubmit={handleSignup}>
         <h1>S'inscrire</h1>
+        <input
+          label="username"
+          id="username"
+          value={username}
+          type="text"
+          placeholder="username"
+          onChange={(event) => {
+            setUsername(event.target.value);
+          }}
+        />
         <input
           label="email"
           id="email"
