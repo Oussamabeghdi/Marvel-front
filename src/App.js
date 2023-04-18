@@ -84,6 +84,8 @@ function App() {
           path="/character/:characterId"
           element={<Infoscharacter searchResults={searchResults} />}
         />
+        <Route path="/comic/:comicId" element={<Comicslist />} />
+
         <Route path="/comics/:characterId" element={<Comicslist />} />
         <Route
           path="/comics"

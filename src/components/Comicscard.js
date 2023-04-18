@@ -39,7 +39,7 @@ const Comicscard = ({ item }) => {
   };
   return (
     <article className="comics">
-      <Link to={`/comics/${item._id}`}>
+      <Link to={`/comic/${item._id}`}>
         <div>
           <p className="comics-title ">{item.title}</p>
           {/* <p className="comics-description ">{item.description}</p> */}

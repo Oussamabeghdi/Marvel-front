@@ -86,9 +86,9 @@ const Menu = ({ token, handleToken }) => {
 
       <div onClick={handleNav} className="mobile-btn">
         {nav ? (
-          <FontAwesomeIcon icon="xmark" size="25" />
+          <FontAwesomeIcon icon="xmark" size="xl" />
         ) : (
-          <FontAwesomeIcon icon="bars" size="25" />
+          <FontAwesomeIcon icon="bars" size="xl" />
         )}
       </div>
     </div>

@@ -33,12 +33,12 @@ const Signup = ({ handleToken }) => {
         navigate("/characters");
       }
     } catch (error) {
-      if (error.response.data.message === "This email already has an account") {
+      if (error.response.data.message === "email already used") {
         setErrorMessage(
           "Cet email est déjà utilisé, veuillez créer un compte avec un email valide."
         );
       }
-      if (error.response.data.message === "Missing parameters") {
+      if (error.response.data.message === "missing parameters") {
         setErrorMessage("Veuillez remplir tous les champs svp.");
       }
     }

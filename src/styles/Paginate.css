@@ -98,3 +98,9 @@
   font-size: 14px;
   border-left: solid 1px #808e9b;
 }
+@media screen and (max-width: 740px) {
+  .previous,
+  .next {
+    display: none;
+  }
+}

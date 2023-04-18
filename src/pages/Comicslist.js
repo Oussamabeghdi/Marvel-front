@@ -7,18 +7,20 @@ const Comicslist = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const params = useParams();
-  const id = params.characterId;
-  console.log(params.characterId);
+  const id = params.comicId;
+  console.log(params.comicId);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          // "https://site--marvel-backend--9gtnl5qyn2yw.code.run/comics/" + id
-          "http://localhost:4000/comics/" + id
+          `https://site--marvel-backend--9gtnl5qyn2yw.code.run/comic/${id}`
+          // "http://localhost:4000/comic/" + id
         );
+        // const character = response.data.filter((c) => c.id === parseInt(id));
+        // console.log(character);
         setData(response.data);
-        console.log(response.data);
+        // console.log(response.data.results);
         setIsLoading(false);
       } catch (error) {
         console.log({ message1: error.message });
@@ -31,7 +33,7 @@ const Comicslist = () => {
     <p>Loading...</p>
   ) : (
     <section>
-      {data.results.map((elem, index) => {
+      {data.map((elem, index) => {
         return (
           <div key={index}>
             <img

@@ -22,7 +22,7 @@ const Comics = ({
         const response = await axios.get(
           `https://site--marvel-backend--9gtnl5qyn2yw.code.run/comics?title=${searchResults}`
         );
-        // console.log(response.data);
+        console.log(response.data);
         setData(response.data);
         setIsloading(false);
       } catch (error) {

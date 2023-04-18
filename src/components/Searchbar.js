@@ -24,27 +24,9 @@ const Searchbar = ({ searchResults, setSearchResults }) => {
         <button onClick={handleCloseModal}>Fermer</button>
 
         <h2>Résultats de recherche</h2>
-        {/* 
-        <ul>
-          {searchResults.map((result) => (
-            <li key={result.id}>{result.title}</li>
-          ))}
-        </ul> */}
       </Modal>
     </div>
   );
 };
-//   return (
-//     <input
-//       className="input-search"
-//       value={search}
-//       type="text"
-//       placeholder="Recherche"
-//       onChange={(event) => {
-//         setSearch(event.target.value);
-//       }}
-//     ></input>
-//   );
-// };
 
 export default Searchbar;
