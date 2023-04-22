@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Oval } from "react-loader-spinner";
-import "../styles/InfosCharacter.css";
+import "../styles/Infoscharacter.css";
 
 const InfosCharacter = () => {
   const [data, setData] = useState();
