@@ -1,12 +1,15 @@
-.details-container {
+.card-wrapper {
   border-radius: 10px;
-  border: 2px solid black;
-  background-color: rgba(0, 0, 0, 0.52);
+  border: 2px solid #1e1e1e;
+  background-color: rgba(0, 0, 0, 0.9);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  height: 320px;
+  width: 300px;
 }
+
 .wrapper-characters {
   padding-top: 50px;
   display: flex;
@@ -15,71 +18,81 @@
 
   background: url("../img/captain\ america.jpg") center/cover;
 }
+
+.character-link {
+  height: 85%;
+}
+
+.details-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  row-gap: 20px;
+}
+
 .container {
-  /* display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    display: grid;
-    width: 80%;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 20px;
-    margin-bottom: 10px; */
   gap: 30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* margin-top: 50px; */
 }
 
 .character-description {
+  display: none;
+  position: absolute;
+  top: 80%;
   font-size: 12px;
-  color: #ffffff;
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+  padding: 20px;
+  width: 350px;
+  border: 2px solid black;
+  border-radius: 20px;
   font-weight: bold;
-  width: 300px;
-  height: 100px;
   text-align: center;
-  padding-top: 15px;
+}
+
+.image-character:hover ~ .character-description {
+  display: block;
 }
 .character-name {
   font-size: 18px;
   color: #ffffff;
   font-weight: bold;
   text-align: center;
-  padding-top: 10px;
 }
-.image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .image-character {
-  margin-bottom: 20px;
   object-fit: fill;
   border: 1px solid white;
   width: 160px;
   height: 160px;
 }
+
 .paginate-characters {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-bottom: 10px;
 }
-.red {
-  background-color: red;
+
+.card-heart {
+  height: 30px;
 }
-.gray {
-  background-color: gray;
-}
+
 @media screen and (max-width: 740px) {
   .wrapper-characters {
     grid-template-columns: 1fr;
   }
+
   .container {
   }
+
   .paginate-characters {
     display: flex;
     justify-content: center;

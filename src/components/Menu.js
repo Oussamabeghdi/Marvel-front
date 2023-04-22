@@ -27,12 +27,14 @@ const Menu = ({ token, handleToken }) => {
     setNav(!nav);
   };
 
+  const onClose = () => setNav(false);
+
   return (
     <div className="nav-link">
       {/* <ul className="menu"> */}
 
       <ul className={nav ? "menu active" : " menu"}>
-        <div className="header-btn">
+        <div onClick={onClose} className="header-btn">
           <li>
             <button onClick={handleClickCharacters}>Characters</button>
           </li>

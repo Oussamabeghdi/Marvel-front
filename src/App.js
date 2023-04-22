@@ -4,9 +4,9 @@ import { useState, useCallback } from "react";
 import Cookies from "js-cookie";
 
 import Characters from "./pages/Characters";
-import Infoscharacter from "./pages/Infoscharacter";
+import InfosCharacter from "./pages/InfosCharacter";
 import Comics from "./pages/Comics";
-import Comicslist from "./pages/Comicslist";
+import Comicslist from "./pages/ComicsList";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 
@@ -82,7 +82,7 @@ function App() {
 
         <Route
           path="/character/:characterId"
-          element={<Infoscharacter searchResults={searchResults} />}
+          element={<InfosCharacter searchResults={searchResults} />}
         />
         <Route path="/comic/:comicId" element={<Comicslist />} />
 

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ReactComponent as Heart } from "../assets/svg/heart.svg";
 
 const Characterscard = ({ item }) => {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -40,19 +40,21 @@ const Characterscard = ({ item }) => {
   const picture = item.thumbnail.path + "." + item.thumbnail.extension;
   return (
     <section>
-      <div className="details-container">
-        <Link to={`/character/${item._id}`}>
-          <p className="character-name">{item.name}</p>
-          <p className="character-description">{item.description} </p>
-          <div className="image-container">
+      <div className="card-wrapper">
+        <Link className="character-link" to={`/character/${item._id}`}>
+          <div className="details-wrapper">
+            <p className="character-name">{item.name}</p>
             <img className="image-character" src={picture} alt="heros" />
+            <p className="character-description">
+              {item.description || "Pas de description."}{" "}
+            </p>
           </div>
         </Link>
-        <button
+        <Heart
+          className="card-heart"
+          style={{ fill: isFavorite ? "red" : "white" }}
           onClick={isFavorite ? onRemoveFavorite : onAddFavoriteInLocalStorage}
-        >
-          <FontAwesomeIcon icon="heart" color={isFavorite ? "red" : "gray"} />
-        </button>
+        />
       </div>
     </section>
   );
