@@ -35,23 +35,34 @@
   align-items: center;
 }
 .comics-image {
+  object-fit: cover;
   border: 1px solid white;
+  width: 160px;
+  height: 160px;
 }
+
 .comics-title {
-  font-size: 16px;
+  font-size: 18px;
   color: #ffffff;
   font-weight: bold;
-  padding: 10px;
   text-align: center;
-  background-color: black;
 }
 .comics-description {
-  color: aliceblue;
-  font-size: 14px;
-  margin-bottom: 20px;
+  display: none;
+  position: absolute;
+  top: 80%;
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+  padding: 20px;
+  width: 350px;
+  border: 2px solid black;
+  border-radius: 20px;
+  font-weight: bold;
   text-align: center;
-  height: 57px;
-  overflow: hidden;
+}
+.comics-image:hover ~ .comics-description {
+  display: block;
 }
 .comic-list {
   height: 100%;
