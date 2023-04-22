@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-const Comicslist = () => {
+const ComicsList = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -49,4 +49,4 @@ const Comicslist = () => {
   );
 };
 
-export default Comicslist;
+export default ComicsList;

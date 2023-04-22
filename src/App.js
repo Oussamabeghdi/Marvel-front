@@ -6,7 +6,7 @@ import Cookies from "js-cookie";
 import Characters from "./pages/Characters";
 import InfosCharacter from "./pages/InfosCharacter";
 import Comics from "./pages/Comics";
-import Comicslist from "./pages/ComicsList";
+import ComicsList from "./pages/ComicsList";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 
@@ -84,9 +84,9 @@ function App() {
           path="/character/:characterId"
           element={<InfosCharacter searchResults={searchResults} />}
         />
-        <Route path="/comic/:comicId" element={<Comicslist />} />
+        <Route path="/comic/:comicId" element={<ComicsList />} />
 
-        <Route path="/comics/:characterId" element={<Comicslist />} />
+        <Route path="/comics/:characterId" element={<ComicsList />} />
         <Route
           path="/comics"
           element={

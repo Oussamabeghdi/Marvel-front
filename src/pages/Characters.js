@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Paginate from "../components/Paginate";
 import { Oval } from "react-loader-spinner";
-import Characterscard from "../components/Characterscard";
+import CharactersCard from "../components/CharactersCard";
 import "../styles/Characters.css";
 
 const Characters = ({
@@ -48,7 +48,7 @@ const Characters = ({
     <section className="wrapper-characters">
       <div className="container">
         {currentPageData.map((character) => {
-          return <Characterscard key={character._id} item={character} />;
+          return <CharactersCard key={character._id} item={character} />;
         })}
       </div>
       <div className="paginate-characters">

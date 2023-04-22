@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ReactComponent as Heart } from "../assets/svg/heart.svg";
 
-const Comicscard = ({ item }) => {
+const ComicsCard = ({ item }) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
@@ -73,4 +72,4 @@ const Comicscard = ({ item }) => {
   );
 };
 
-export default Comicscard;
+export default ComicsCard;

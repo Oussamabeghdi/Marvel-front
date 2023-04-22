@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ReactComponent as Heart } from "../assets/svg/heart.svg";
 
-const Characterscard = ({ item }) => {
+const CharactersCard = ({ item }) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
@@ -60,4 +60,4 @@ const Characterscard = ({ item }) => {
   );
 };
 
-export default Characterscard;
+export default CharactersCard;

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Paginate from "../components/Paginate";
 import { Oval } from "react-loader-spinner";
-import Comicscard from "../components/Comicscard";
+import ComicsCard from "../components/ComicsCard";
 import "../styles/Comics.css";
 // import Paginate from "../components/Paginate";
 
@@ -46,7 +46,7 @@ const Comics = ({
     <section className="wrapper-comics">
       <div className="comics-container">
         {currentPageData.map((item, index) => {
-          return <Comicscard item={item} key={index} />;
+          return <ComicsCard item={item} key={index} />;
         })}
       </div>
       <div className="paginate-comics">

@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Oval } from "react-loader-spinner";
-import "../styles/Infoscharacter.css";
+import "../styles/InfosCharacter.css";
 
-const Infoscharacter = () => {
+const InfosCharacter = () => {
   const [data, setData] = useState();
   // const [, set] = useState();
 
@@ -81,4 +81,4 @@ const Infoscharacter = () => {
     </section>
   );
 };
-export default Infoscharacter;
+export default InfosCharacter;
