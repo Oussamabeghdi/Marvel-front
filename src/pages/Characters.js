@@ -4,7 +4,6 @@ import Paginate from "../components/Paginate";
 import { Oval } from "react-loader-spinner";
 import Characterscard from "../components/Characterscard";
 import "../styles/Characters.css";
-// import { Link } from "react-router-dom";
 
 const Characters = ({
   searchResults,

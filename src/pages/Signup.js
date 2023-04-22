@@ -39,7 +39,7 @@ const Signup = ({ handleToken }) => {
         );
       }
       if (error.response.data.message === "missing parameters") {
-        setErrorMessage("Veuillez remplir tous les champs svp.");
+        setErrorMessage("Veuillez remplir tous les champs svp!");
       }
     }
   };
@@ -90,7 +90,16 @@ const Signup = ({ handleToken }) => {
         />
 
         <input className="signup-btn" type="submit" value="S'inscrire" />
-        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+        {errorMessage && (
+          <p
+            style={{
+              color: "white",
+              fontWeight: "bold",
+            }}
+          >
+            {errorMessage}
+          </p>
+        )}
         <Link to="/login">
           <h1>Tu as déjà un compte? connecte-toi !</h1>
         </Link>

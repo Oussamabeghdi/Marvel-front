@@ -18,30 +18,6 @@ const Header = ({ handleToken, token, searchResults, setSearchResults }) => {
         searchResults={searchResults}
         setSearchResults={setSearchResults}
       />
-      {/* {token ? (
-        <button
-          onClick={() => {
-            handleToken(null);
-            navigate("/");
-          }}
-        >
-          Se déconnecter
-        </button>
-      ) : (
-        <div className="menu-container">
-
-          <Link to="/signup">
-            <button>
-              <p>S'inscrire</p>
-            </button>
-          </Link>
-          <Link to="/login">
-            <button>
-              <p>Se connecter</p>
-            </button>
-          </Link>
-        </div>
-      )} */}
     </header>
   );
 };

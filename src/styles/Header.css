@@ -38,7 +38,6 @@
   padding-right: 60px;
   border: none;
   padding: 0.8rem;
-  /* display: inline; */
 }
 
 .input-search:focus {
@@ -56,12 +55,16 @@
 .nav-bar {
   display: none;
 }
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 890px) {
+  .input-search {
+    max-width: 200px;
+  }
+}
+@media screen and (max-width: 765px) {
   .header-container {
     height: 90px;
     display: flex;
     justify-content: center;
-    /* align-items: flex-start; */
   }
 
   .header-btn {
@@ -109,7 +112,6 @@
     position: fixed;
     flex-direction: column;
     justify-content: center;
-    /* border: 1px solid orange; */
     left: -100%;
     top: 0;
     bottom: 0;
@@ -124,6 +126,5 @@
   }
   .nav-link button {
     font-size: 1.2rem;
-    /* background-color: grey; */
   }
 }

@@ -5,16 +5,7 @@ import "../styles/Header.css";
 
 const Menu = ({ token, handleToken }) => {
   const [nav, setNav] = useState(false);
-  // const [showFavorites, setShowFavorites] = useState(false);
-  // const [favorites, setFavorites] = useState([]);
 
-  // const handleFavoriteClick = () => {
-  //   const storedFavorites = JSON.parse(
-  //     localStorage.getItem("favorites") || "[]"
-  //   );
-  //   setFavorites(storedFavorites);
-  //   setShowFavorites(true);
-  // };
   const navigate = useNavigate();
 
   const handleClickCharacters = () => {

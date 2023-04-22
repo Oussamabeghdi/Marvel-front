@@ -6,10 +6,9 @@ import "../styles/Infoscharacter.css";
 
 const Infoscharacter = () => {
   const [data, setData] = useState();
-  const [comics, setComics] = useState();
   // const [, set] = useState();
 
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   const params = useParams();
   // console.log(params);
@@ -20,14 +19,10 @@ const Infoscharacter = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://site--marvel-backend--9gtnl5qyn2yw.code.run/character/${id}`
+          `https://site--marvel-backend--9gtnl5qyn2yw.code.run/comics/${id}`
         );
-        console.log(response.data.comics);
-        const parse = response.data.comics.join(",");
-
+        console.log(response.data);
         setData(response.data);
-        setComics(parse);
-        console.log(parse, "là");
         setIsLoading(false);
       } catch (error) {
         console.log({ message: error.message });
@@ -35,19 +30,6 @@ const Infoscharacter = () => {
     };
     fetchData();
   }, [id]);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          `https://site--marvel-backend--9gtnl5qyn2yw.code.run/comic/5fce213378edeb0017c9602f`
-        );
-        console.log(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchData();
-  }, [comics]);
   return isLoading ? (
     <Oval
       ariaLabel="loading-indicator"
@@ -62,29 +44,39 @@ const Infoscharacter = () => {
     <section className="infos-container">
       <div className="infos-div">
         <div className="container-title-description">
-          <h1 className="title">{data.name}</h1>
-          <p className="desciption">{data.description}</p>
+          <h1 className="title">{data?.name}</h1>
+          {/* <p className="desciption">{data?.description}</p> */}
         </div>
 
         <img
           src={
-            data.thumbnail.path +
-            "/portrait_incredible" +
+            data?.thumbnail.path +
+            "/portrait_xlarge" +
             "." +
-            data.thumbnail.extension
+            data?.thumbnail.extension
           }
           alt=""
         />
       </div>
+      <h1>Liste des comics :</h1>
       <div className="comic-list">
-        <h1>Liste des comics :</h1>
-        {data.comics.map((id, index) => {
-          return (
-            <ul key={index}>
-              <li> id : {id}</li>
-            </ul>
-          );
-        })}
+        {data?.comics?.map((item, id) => (
+          <div className="comic-card" key={id}>
+            {item.thumbnail.path +
+              "/portrait_xlarge." +
+              item.thumbnail.extension && (
+              <img
+                src={
+                  item.thumbnail.path +
+                  "/portrait_xlarge." +
+                  item.thumbnail.extension
+                }
+                alt={`item-${id}`}
+              />
+            )}
+            <span>{item?.title}</span>
+          </div>
+        ))}
       </div>
     </section>
   );
